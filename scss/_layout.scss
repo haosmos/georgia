@@ -1,3 +1,75 @@
+.navigation {
+    position: relative;
+    z-index: 200;
+
+    .navbar-navigation {
+        display: flex;
+
+        &__left {
+            width: 50vw;
+            height: 100vh;
+            background-color: $color-dark;
+            position: fixed;
+            left: 0;
+
+            .left-img {
+                width: 50%;
+                position: absolute;
+                box-shadow: 0 15px 60px rgba($color-black, .4);
+                opacity: .7;
+                border-radius: 10px;
+            }
+
+            .left-img-1 {
+                top: 15%;
+                left: 15%;
+            }
+
+            .left-img-2 {
+                top: 35%;
+                left: 25%;
+            }
+
+            .left-img-3 {
+                top: 55%;
+                left: 35%;
+            }
+        }
+
+        &__right {
+            width: 50vw;
+            height: 100vh;
+            background-color: #1f1d1d;
+            position: fixed;
+            right: 0;
+            @include flexLayout;
+        }
+
+        .nav-list {
+            &__item {
+                list-style: none;
+            }
+
+            &__link {
+                font-family: $font-dancingScript;
+                font-size: 50px;
+                @include textStyles(capitalize);
+                color: $color-secondary;
+                text-decoration: none;
+                display: block;
+                margin: 20px;
+                text-align: center;
+                transition: all .5s;
+
+                &:hover {
+                    color: $color-primary;
+                    letter-spacing: 4px;
+                }
+            }
+        }
+    }
+}
+
 .header {
     width: 100%;
     height: 100vh;
@@ -71,6 +143,47 @@
     .cards-wrapper {
         display: flex;
         flex-wrap: wrap;
+    }
+}
+
+.footer {
+    padding: 70px 0;
+    @include flexLayout;
+    flex-direction: column;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 70px;
+    }
+
+    .social-media__list {
+        display: flex;
+        width: 300px;
+        justify-content: space-between;
+        margin-bottom: 70px;
+
+        .social-media__item {
+            list-style: none;
+        }
+
+        .social-media__link {
+            text-decoration: none;
+            font-size: 50px;
+            color: $color-secondary;
+            transition: color .7s;
+
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+
+    .copyright__text {
+        font-family: $font-josefinSans;
+        font-size: 18px;
+        color: $color-secondary;
+        @include textStyles(capitalize);
     }
 }
 
